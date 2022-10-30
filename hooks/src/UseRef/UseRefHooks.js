@@ -1,28 +1,24 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 const UseRefHooks = () => {
-    const [name, setName] = useState('');
-    const inputRef = useRef();
-    const prevName = useRef();
+    const [inputValue, setInputValue] = useState("");
+    const previousInputValue = useRef("");
 
     useEffect(() => {
-        prevName.current = name;
-    }, [name])
-
-
-    function focus() {
-        inputRef.current.focus();
-        inputRef.current.value = 'Some Value'
-    }
+        previousInputValue.current = inputValue;
+    }, [inputValue]);
 
     return (
         <>
-            <input ref={inputRef} value={name} onChange={e => setName(e.target.value)} />
-            <div>my name is <b>{name}</b> and it is used to be <b>{prevName.current}</b></div>
-            <button onClick={focus}>Focus</button>
-
+            <input
+                type="text"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+            />
+            <h2>Current Value: {inputValue}</h2>
+            <h2>Previous Value: {previousInputValue.current}</h2>
         </>
-    )
+    );
 }
 
 export default UseRefHooks

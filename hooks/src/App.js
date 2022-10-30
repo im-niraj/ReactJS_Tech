@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import UseContext from "./useContext/UseContext";
 import UseEffect from "./UseEffect/UseEffect";
+import UseMemo from "./useMemo/UseMemo";
 import UseRefHooks from "./UseRef/UseRefHooks";
 import UseState from "./UseState/UseState";
 
@@ -11,7 +12,8 @@ function App() {
         // <UseState />
         // <UseEffect />
         // <UseContext />
-        <UseRefHooks />
+        // <UseRefHooks />
+        <UseMemo />
     );
 }
 
